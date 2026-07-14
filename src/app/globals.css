@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: #020617;
+  --color-surface: #0f172a;
+  --color-border: #1e293b;
+  --color-muted: #64748b;
+  --color-primary: #00FFFF;
+  --color-primary-dim: #0891b2;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --font-sans: var(--font-inter), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-fira-code), ui-monospace, SFMono-Regular, monospace;
+
+  --animate-fade-up: fade-up 0.5s ease-out forwards;
+  --animate-blob: blob 20s infinite alternate;
+  --animate-blob-delayed: blob 25s infinite alternate-reverse;
+  --animate-blob-slow: blob 30s infinite alternate;
+}
+
+body {
+  background: var(--color-base);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); opacity: 0.2; }
+  25% { transform: translate(20vw, 15vh) scale(1.1); opacity: 0.4; }
+  50% { transform: translate(0vw, 30vh) scale(0.9); opacity: 0.2; }
+  75% { transform: translate(-20vw, 10vh) scale(1.2); opacity: 0.4; }
+  100% { transform: translate(0px, 0px) scale(1); opacity: 0.2; }
+}
