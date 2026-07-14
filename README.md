@@ -14,7 +14,6 @@
   <a href="#about-the-project">About The Project</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#technical-stack">Technical Stack</a> •
-  <a href="#local-development">Local Development</a> •
   <a href="#lets-connect">Let's Connect</a>
 </p>
 
@@ -44,24 +43,6 @@ It is designed with a premium, glassmorphic UI, fluid micro-animations, and dyna
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
 - **Validation:** [Zod](https://zod.dev/)
 
-### Integrations
-- **Deployment & Hosting:** Vercel
-
-## Local Development
-
-Want to run this project locally? Follow these steps:
-
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-2. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-3. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
 ## Let's Connect
 
