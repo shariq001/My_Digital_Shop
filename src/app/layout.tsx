@@ -36,6 +36,8 @@ export const metadata: Metadata = {
   },
 };
 
+import SplashIntro from "@/components/feature/SplashIntro";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -46,6 +48,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col selection:bg-primary/30 relative z-0`}
       >
+        <SplashIntro />
         <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
           <div className="absolute -top-[10%] -left-[10%] h-[50vw] w-[50vw] rounded-full bg-primary/20 blur-[150px] animate-blob" />
           <div className="absolute top-[20%] right-[0%] h-[60vw] w-[60vw] rounded-full bg-[#0891b2]/20 blur-[150px] animate-blob-delayed" />

@@ -1,19 +1,14 @@
 <!--
 Sync Impact Report:
-- Version change: 1.0.0
-- Modified Principles:
-  - Added: Architecture Principles
-  - Added: Technology Constraints
-  - Added: Code Quality Standards
-  - Added: Design & Theming Requirements
-  - Added: Content & SEO Requirements
-  - Added: Security & Data Hygiene
-  - Added: Workflow Rules
-- Removed sections: Default template placeholders
+- Version change: 1.0.0 -> 1.1.0
+- Modified Principles: None
+- Added sections:
+  - 8. Third-Party Integrations & Performance
+- Removed sections: None
 - Templates requiring updates:
-  - .specify/templates/plan-template.md (✅ updated)
-  - .specify/templates/spec-template.md (✅ updated)
-  - .specify/templates/tasks-template.md (✅ updated)
+  - .specify/templates/plan-template.md (⚠ pending)
+  - .specify/templates/spec-template.md (⚠ pending)
+  - .specify/templates/tasks-template.md (⚠ pending)
 -->
 # DevThemes Digital Storefront Constitution
 
@@ -64,6 +59,11 @@ Sync Impact Report:
 - Commit after each completed task with a message in this format: `type(scope): description` (e.g., `feat(grid): add responsive listing grid`).
 - When you identify a pattern violation against this constitution, flag it explicitly rather than silently fixing or ignoring it.
 
+### 8. Third-Party Integrations & Performance
+- External Validation: Use designated services (e.g., Abstract API or Hunter.io) for real-time data validation.
+- Data Storage: Authorized external integrations (e.g., Google Sheets) MUST be used for lightweight data collection.
+- Performance: All real-time validations or synchronous third-party API calls MUST complete in under 1 second to ensure a frictionless user experience.
+
 ## Governance
 
 - The Constitution supersedes all other practices.
@@ -75,4 +75,4 @@ Sync Impact Report:
   - PATCH: Clarifications, wording, typo fixes, non-semantic refinements.
 - Complexity must always be justified.
 
-**Version**: 1.0.0 | **Ratified**: 2026-07-15 | **Last Amended**: 2026-07-15
+**Version**: 1.1.0 | **Ratified**: 2026-07-15 | **Last Amended**: 2026-07-15

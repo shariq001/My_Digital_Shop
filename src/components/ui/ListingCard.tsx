@@ -15,7 +15,7 @@ export default function ListingCard({ listing }: ListingCardProps) {
       <div className="absolute top-1/2 left-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_300deg,var(--color-primary)_360deg)] opacity-30 transition-opacity duration-500 group-hover:opacity-100" />
       
       <div className="relative z-10 flex h-full w-full flex-col overflow-hidden rounded-xl bg-gradient-to-br from-zinc-900 to-black border border-white/5">
-      <div className="relative aspect-[4/5] w-full overflow-hidden bg-black/40">
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-black/40 border-b border-white/20">
         <Image
           src={listing.thumbnailUrl}
           alt={listing.title}
@@ -30,8 +30,21 @@ export default function ListingCard({ listing }: ListingCardProps) {
         <h3 className="line-clamp-1 flex-1 text-lg font-medium text-white group-hover:text-primary transition-colors">
           {listing.title}
         </h3>
+        
+        <p className="mt-2 text-sm text-muted line-clamp-2">
+          {listing.shortDescription}
+        </p>
 
-
+        {listing.tags && listing.tags.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {listing.tags.slice(0, 3).map((tag) => (
+              <span key={tag} className="rounded-full bg-white/5 px-2 py-0.5 text-xs text-white/70 border border-white/10">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+        
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <a
             href={listing.etsyUrl}
