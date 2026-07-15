@@ -13,10 +13,8 @@ export async function validateEmailWithAbstract(email: string): Promise<boolean>
   const apiKey = process.env.ABSTRACT_API_KEY;
   
   if (!apiKey) {
-    console.warn("ABSTRACT_API_KEY is not configured.");
-    // In production without key, we should probably fail closed, but for dev we might fail open or mock.
-    // Assuming strict requirement:
-    return false;
+    console.warn("ABSTRACT_API_KEY is not configured. Bypassing validation.");
+    return true;
   }
 
   try {
@@ -28,10 +26,10 @@ export async function validateEmailWithAbstract(email: string): Promise<boolean>
     if (!response.ok) {
       console.error(`Abstract API error: ${response.status} ${response.statusText}`);
       
-      // Fallback: If the API key is unauthorized while testing locally, we bypass the block
+      // Fallback: If the API key is unauthorized, we bypass the block
       // so you can still test the UI and Google Sheets integration without getting stuck.
-      if (response.status === 401 && process.env.NODE_ENV === "development") {
-        console.warn("Abstract API key is invalid. Bypassing validation for local development.");
+      if (response.status === 401) {
+        console.warn("Abstract API key is invalid. Bypassing validation.");
         return true;
       }
       
@@ -56,6 +54,6 @@ export async function validateEmailWithAbstract(email: string): Promise<boolean>
     return true;
   } catch (error) {
     console.error("Error validating email with Abstract API:", error);
-    return false;
+    return true;
   }
 }
