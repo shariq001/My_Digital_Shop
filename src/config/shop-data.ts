@@ -4,13 +4,13 @@ import { CATEGORIES } from "./categories";
 export const DevThemeSchema = z.object({
   id: z.string().min(1, "ID is required"),
   title: z.string().min(1, "Title is required"),
-  shortDescription: z.string().max(100, "Short description must be <= 100 chars"),
+  shortDescription: z.string().max(200, "Short description must be <= 200 chars"),
   description: z.string().min(1, "Description is required"),
   category: z.enum(CATEGORIES as unknown as [string, ...string[]]),
   featured: z.boolean().optional(),
   thumbnailUrl: z.string().min(1, "Thumbnail URL is required"),
   etsyUrl: z.string().url("Etsy URL must be a valid URL"),
-  livePreviewUrl: z.string().url("Live Preview URL must be a valid URL"),
+  livePreviewUrl: z.string().url("Live Preview URL must be a valid URL").optional(),
   tags: z.array(z.string()).optional(),
 });
 
